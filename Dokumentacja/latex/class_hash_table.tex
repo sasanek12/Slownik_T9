@@ -1,0 +1,149 @@
+\hypertarget{class_hash_table}{}\doxysection{Hash\+Table\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_hash_table}\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} (const T \&value, string number)
+\item 
+\mbox{\hyperlink{class_hash_table_a0d033f0d96cdc2e23c6e7e3796c92815}{Hash\+Table}} (int table\+Size)
+\item 
+bool \mbox{\hyperlink{class_hash_table_a4824e1158f2eb549fa8b77e152c8a33a}{insert}} (const T \&value, string number)
+\item 
+bool \mbox{\hyperlink{class_hash_table_a60f56aa58d7f3f966c2d49a1de45fe20}{remove}} (const T \&value)
+\item 
+bool \mbox{\hyperlink{class_hash_table_aea55ef3f8610dc7a460a40d61dd86834}{contains}} (const T \&value)
+\item 
+\mbox{\hyperlink{class_linked_list}{Linked\+List}} \mbox{\hyperlink{class_hash_table_a5e36c4a3e09166e219c4bbdb8f6f5ec6}{find}} (string number)
+\item 
+void \mbox{\hyperlink{class_hash_table_aaed86109363c5412e7aeebeb0200fe44}{make\+Empty}} ()
+\item 
+void \mbox{\hyperlink{class_hash_table_a0826576b3f8a4db2139efae93f5f7d65}{print\+Hash\+Table}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hash_table_a0d033f0d96cdc2e23c6e7e3796c92815}\label{class_hash_table_a0d033f0d96cdc2e23c6e7e3796c92815}} 
+\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}!HashTable@{HashTable}}
+\index{HashTable@{HashTable}!HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{HashTable()}{HashTable()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_hash_table}{Hash\+Table}}$<$ T $>$\mbox{\hyperlink{class_hash_table}{\+::\+Hash\+Table}} (\begin{DoxyParamCaption}\item[{int}]{table\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+konstruktor Hashtable
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & tablesize -\/ rozmiar hashtable \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hash_table_aea55ef3f8610dc7a460a40d61dd86834}\label{class_hash_table_aea55ef3f8610dc7a460a40d61dd86834}} 
+\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}!contains@{contains}}
+\index{contains@{contains}!HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_hash_table}{Hash\+Table}}$<$ T $>$\+::contains (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+sprawdza, czy w hashtable jest dane słowo
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & value -\/ szukane słowo\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true przy powodzeniu, false przy błędzie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hash_table_a5e36c4a3e09166e219c4bbdb8f6f5ec6}\label{class_hash_table_a5e36c4a3e09166e219c4bbdb8f6f5ec6}} 
+\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}!find@{find}}
+\index{find@{find}!HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{class_linked_list}{Linked\+List}} \mbox{\hyperlink{class_hash_table}{Hash\+Table}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{string}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+znajduje słowa dla podanego numeru
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & number -\/ numer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_linked_list}{Linked\+List()}} ze znalezionymi słowami 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}\label{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}} 
+\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}!hash@{hash}}
+\index{hash@{hash}!HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \mbox{\hyperlink{class_hash_table}{Hash\+Table}}$<$ T $>$\+::hash (\begin{DoxyParamCaption}\item[{const T \&}]{value,  }\item[{string}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+funkcja hashująca DJB
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & value -\/ hashowane słowo \\
+\hline
+{\em int} & number -\/ numer przypisany do słowa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hash dla podanych wartości 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hash_table_a4824e1158f2eb549fa8b77e152c8a33a}\label{class_hash_table_a4824e1158f2eb549fa8b77e152c8a33a}} 
+\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_hash_table}{Hash\+Table}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{const T \&}]{value,  }\item[{string}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+wstawia wartość do hashtable
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & value -\/ słowo \\
+\hline
+{\em int} & number -\/ numer przypisany do słowa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true przy powodzeniu, false przy błędzie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_hash_table_aaed86109363c5412e7aeebeb0200fe44}\label{class_hash_table_aaed86109363c5412e7aeebeb0200fe44}} 
+\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}!makeEmpty@{makeEmpty}}
+\index{makeEmpty@{makeEmpty}!HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{makeEmpty()}{makeEmpty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_hash_table}{Hash\+Table}}$<$ T $>$\+::make\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+czyści hashtable \mbox{\Hypertarget{class_hash_table_a0826576b3f8a4db2139efae93f5f7d65}\label{class_hash_table_a0826576b3f8a4db2139efae93f5f7d65}} 
+\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}!printHashTable@{printHashTable}}
+\index{printHashTable@{printHashTable}!HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{printHashTable()}{printHashTable()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{class_hash_table}{Hash\+Table}}$<$ T $>$\+::print\+Hash\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+wyświetla hashtable \mbox{\Hypertarget{class_hash_table_a60f56aa58d7f3f966c2d49a1de45fe20}\label{class_hash_table_a60f56aa58d7f3f966c2d49a1de45fe20}} 
+\index{HashTable$<$ T $>$@{HashTable$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!HashTable$<$ T $>$@{HashTable$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{class_hash_table}{Hash\+Table}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+usuwa wartość z hashtable
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & value -\/ usuwana wartość\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true przy powodzeniu, false przy błędzie 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hash\+Table.\+h\end{DoxyCompactItemize}

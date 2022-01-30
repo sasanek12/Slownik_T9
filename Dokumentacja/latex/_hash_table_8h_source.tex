@@ -1,0 +1,170 @@
+\hypertarget{_hash_table_8h_source}{}\doxysection{Hash\+Table.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Linkedlist.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef HASHTABLE\_HASHTABLE\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define HASHTABLE\_HASHTABLE\_H}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_hash_table}{HashTable}} \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12     \textcolor{keywordtype}{int} HASH\_TABLE\_SIZE;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{int} size;}
+\DoxyCodeLine{14     \textcolor{keyword}{struct }Node\{}
+\DoxyCodeLine{15         T element;}
+\DoxyCodeLine{16         \textcolor{keywordtype}{string} number;}
+\DoxyCodeLine{17         Node * next;}
+\DoxyCodeLine{18     \};}
+\DoxyCodeLine{19     Node** head;}
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}}(\textcolor{keyword}{const} T\& value, \textcolor{keywordtype}{string} number) \textcolor{comment}{//funkcja hashująca DJB}}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30         \textcolor{keywordflow}{if}  \textcolor{keyword}{constexpr}(std::is\_arithmetic\_v<T> || std::is\_same\_v<T,char>)\{}
+\DoxyCodeLine{31             \textcolor{keywordflow}{return} value\%HASH\_TABLE\_SIZE;}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr}(std::is\_same\_v<T,std::string>)\{}
+\DoxyCodeLine{34             \textcolor{keywordtype}{int} temp = 0;}
+\DoxyCodeLine{35             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} = 5381;}
+\DoxyCodeLine{36                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c : value) \{}
+\DoxyCodeLine{37                     \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} = (\mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} << 5) + \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} + c;}
+\DoxyCodeLine{38                 \}}
+\DoxyCodeLine{39                 \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} c : number) \{}
+\DoxyCodeLine{40                     \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} = (\mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} << 5) + \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} + c;}
+\DoxyCodeLine{41                 \}}
+\DoxyCodeLine{42                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}} \% HASH\_TABLE\_SIZE;}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{51     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_hash_table_a0d033f0d96cdc2e23c6e7e3796c92815}{HashTable}}(\textcolor{keywordtype}{int} tableSize)\{}
+\DoxyCodeLine{52         HASH\_TABLE\_SIZE = tableSize*3;}
+\DoxyCodeLine{53         size = 0;}
+\DoxyCodeLine{54         head = \textcolor{keyword}{new} Node*[HASH\_TABLE\_SIZE];}
+\DoxyCodeLine{55         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < HASH\_TABLE\_SIZE ; i++)}
+\DoxyCodeLine{56             head[i] = NULL;}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \mbox{\hyperlink{class_hash_table}{\string~HashTable}}()\{}
+\DoxyCodeLine{60         \mbox{\hyperlink{class_hash_table_aaed86109363c5412e7aeebeb0200fe44}{makeEmpty}}();}
+\DoxyCodeLine{61     \}}
+\DoxyCodeLine{69     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hash_table_a4824e1158f2eb549fa8b77e152c8a33a}{insert}}(\textcolor{keyword}{const} T\& value, \textcolor{keywordtype}{string} number)\{ \textcolor{comment}{//wstawia wartość do hashtable}}
+\DoxyCodeLine{70         Node* newNode = \textcolor{keyword}{new} Node();}
+\DoxyCodeLine{71         newNode-\/>element = value;}
+\DoxyCodeLine{72         newNode-\/>number = number;}
+\DoxyCodeLine{73         newNode-\/>next = NULL;}
+\DoxyCodeLine{74         \textcolor{keywordtype}{int} slot = \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}}(value, number);}
+\DoxyCodeLine{75         Node* k = head[slot];}
+\DoxyCodeLine{76         \textcolor{keywordflow}{if}(k != NULL)\{}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78         \textcolor{keywordflow}{if}(k == NULL)\{}
+\DoxyCodeLine{79             head[slot] = newNode;}
+\DoxyCodeLine{80             size++;}
+\DoxyCodeLine{81             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{82         \}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if}(k-\/>element == newNode-\/>element)\{}
+\DoxyCodeLine{84             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{95     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hash_table_a60f56aa58d7f3f966c2d49a1de45fe20}{remove}}(\textcolor{keyword}{const} T\& value)\{ \textcolor{comment}{//usuwa wartość z hashtable}}
+\DoxyCodeLine{96         \textcolor{keywordtype}{int} index = \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}}(value);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         Node* temp = head[index];}
+\DoxyCodeLine{99         Node* temp2 = head[index];}
+\DoxyCodeLine{100         \textcolor{keywordflow}{if}(temp == NULL)}
+\DoxyCodeLine{101             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \textcolor{keywordflow}{if} \textcolor{keyword}{constexpr}(std::is\_same\_v<T,std::string>)\{}
+\DoxyCodeLine{104             \textcolor{keywordflow}{if}(temp-\/>element == value)}
+\DoxyCodeLine{105             \{}
+\DoxyCodeLine{106                 head[index] = temp-\/>next;}
+\DoxyCodeLine{107                 \textcolor{keyword}{delete} temp;}
+\DoxyCodeLine{108                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{109             \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111             \textcolor{keywordflow}{while}(temp-\/>element != value )}
+\DoxyCodeLine{112             \{}
+\DoxyCodeLine{113                 temp = temp-\/>next;}
+\DoxyCodeLine{114                 \textcolor{keywordflow}{if}(temp == NULL)}
+\DoxyCodeLine{115                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{116             \}}
+\DoxyCodeLine{117             \textcolor{keywordflow}{if}(temp == NULL)}
+\DoxyCodeLine{118                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120             \textcolor{keywordflow}{while}(temp2-\/>next != temp)}
+\DoxyCodeLine{121             \{}
+\DoxyCodeLine{122                 temp2 = temp2-\/>next;}
+\DoxyCodeLine{123             \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125             temp2-\/>next = temp-\/>next;}
+\DoxyCodeLine{126             \textcolor{keyword}{delete}(temp);}
+\DoxyCodeLine{127             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{128         \}}
+\DoxyCodeLine{129         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{130             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{139     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hash_table_aea55ef3f8610dc7a460a40d61dd86834}{contains}}(\textcolor{keyword}{const} T\& value)\{ \textcolor{comment}{//sprawdza, czy hashtable posiada dane słowo}}
+\DoxyCodeLine{140         \textcolor{keywordtype}{int} slot = \mbox{\hyperlink{class_hash_table_a4bb1fb2504d125753419ab0f8ae21d66}{hash}}(value);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142         Node* temp = head[slot];}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144         \textcolor{keywordflow}{if}(temp == NULL)}
+\DoxyCodeLine{145             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147         \textcolor{keywordflow}{if}(std::is\_same\_v<T,std::string>)\{}
+\DoxyCodeLine{148             \textcolor{keywordflow}{while}(temp-\/>element != value)}
+\DoxyCodeLine{149             \{}
+\DoxyCodeLine{150                 \textcolor{keywordflow}{if}(temp == NULL)}
+\DoxyCodeLine{151                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153                 temp = temp-\/>next;}
+\DoxyCodeLine{154             \}}
+\DoxyCodeLine{155         \}}
+\DoxyCodeLine{156         \textcolor{keywordflow}{if}(temp == NULL)}
+\DoxyCodeLine{157             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{160     \}}
+\DoxyCodeLine{168     \mbox{\hyperlink{class_linked_list}{LinkedList}} \mbox{\hyperlink{class_hash_table_a5e36c4a3e09166e219c4bbdb8f6f5ec6}{find}}(\textcolor{keywordtype}{string} number)\{ \textcolor{comment}{//pobiera z hashtable wszystkie słowa o podanym numerze}}
+\DoxyCodeLine{169         \mbox{\hyperlink{class_linked_list}{LinkedList}} list;}
+\DoxyCodeLine{170         Node* temp = head[0];}
+\DoxyCodeLine{171         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i= 0; i < HASH\_TABLE\_SIZE ; i++) \{}
+\DoxyCodeLine{172             temp = head[i];}
+\DoxyCodeLine{173             \textcolor{keywordflow}{if}(temp == NULL)\{}
+\DoxyCodeLine{174                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{175             \}}
+\DoxyCodeLine{176             \textcolor{keywordflow}{if}(temp-\/>number == number)\{}
+\DoxyCodeLine{177                 list.\mbox{\hyperlink{class_linked_list_ad787a90e4dcd431cef9da0dfd8afba6c}{push\_back}}(temp-\/>element);}
+\DoxyCodeLine{178             \}}
+\DoxyCodeLine{179         \}}
+\DoxyCodeLine{180         \textcolor{keywordflow}{return} list;}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{190     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hash_table_aaed86109363c5412e7aeebeb0200fe44}{makeEmpty}}()\{ \textcolor{comment}{//czyści hashtable}}
+\DoxyCodeLine{191         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < HASH\_TABLE\_SIZE; i ++)\{}
+\DoxyCodeLine{192             Node* temp = head[i];}
+\DoxyCodeLine{193             Node* temp2;}
+\DoxyCodeLine{194             \textcolor{keywordflow}{while}(temp != NULL)\{}
+\DoxyCodeLine{195                 temp2 = temp;}
+\DoxyCodeLine{196                 temp = temp-\/>next;}
+\DoxyCodeLine{197                 \textcolor{keyword}{delete} temp2;}
+\DoxyCodeLine{198             \}}
+\DoxyCodeLine{199         \}}
+\DoxyCodeLine{200     \}}
+\DoxyCodeLine{208     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hash_table_a0826576b3f8a4db2139efae93f5f7d65}{printHashTable}}()\{ \textcolor{comment}{//wyświetla hashtable}}
+\DoxyCodeLine{209         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ; i < HASH\_TABLE\_SIZE; i ++)\{}
+\DoxyCodeLine{210             Node* temp = head[i];}
+\DoxyCodeLine{211             \textcolor{keywordflow}{while}(temp != NULL)\{}
+\DoxyCodeLine{212                 std::cout << \textcolor{stringliteral}{"{}Index: "{}} << i << \textcolor{stringliteral}{"{} Value: "{}} << temp-\/>element << std::endl;}
+\DoxyCodeLine{213                 temp = temp-\/>next;}
+\DoxyCodeLine{214             \}}
+\DoxyCodeLine{215         \}}
+\DoxyCodeLine{216     \}}
+\DoxyCodeLine{217 \};}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//HASHTABLE\_HASHTABLE\_H}}
+
+\end{DoxyCode}

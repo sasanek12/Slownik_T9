@@ -1,0 +1,5 @@
+C:/Users/kga/Documents/build-SlownikT9-Desktop_Qt_6_2_3_MinGW_64_bit-Release/CMakeFiles/rebuild_cache.dir
+C:/Users/kga/Documents/build-SlownikT9-Desktop_Qt_6_2_3_MinGW_64_bit-Release/CMakeFiles/SlownikT9.dir
+C:/Users/kga/Documents/build-SlownikT9-Desktop_Qt_6_2_3_MinGW_64_bit-Release/CMakeFiles/edit_cache.dir
+C:/Users/kga/Documents/build-SlownikT9-Desktop_Qt_6_2_3_MinGW_64_bit-Release/CMakeFiles/SlownikT9_autogen_timestamp_deps.dir
+C:/Users/kga/Documents/build-SlownikT9-Desktop_Qt_6_2_3_MinGW_64_bit-Release/CMakeFiles/SlownikT9_autogen.dir

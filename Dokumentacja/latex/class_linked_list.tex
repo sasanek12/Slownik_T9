@@ -1,0 +1,166 @@
+\hypertarget{class_linked_list}{}\doxysection{Linked\+List Class Reference}
+\label{class_linked_list}\index{LinkedList@{LinkedList}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_linked_list_ad4ac8cdacb340a160ef932cb26b89d33}{insert}} (int index, string a)
+\item 
+void \mbox{\hyperlink{class_linked_list_a157265cc6ab37fe29d08be8684ca56bb}{to\+String}} ()
+\item 
+int \mbox{\hyperlink{class_linked_list_a92bb5271734b51ab089d75bf52aee919}{get\+Length}} ()
+\item 
+string \mbox{\hyperlink{class_linked_list_a7a091a6ed84657ffda3c51c8fcceb570}{retrieve}} (int index)
+\item 
+void \mbox{\hyperlink{class_linked_list_aa7fe6dc8078957933951a16cd15150bf}{remove\+\_\+value}} (string value)
+\item 
+Node $\ast$ \mbox{\hyperlink{class_linked_list_ae2d2a1908eb4705d52ea22eb78d1b5e1}{first}} ()
+\item 
+Node $\ast$ \mbox{\hyperlink{class_linked_list_a555d5682d4e93673cbbeb84f0f177959}{last}} ()
+\item 
+bool \mbox{\hyperlink{class_linked_list_ad10e4e820ff3f630585b31bf3a25443f}{remove}} (int index)
+\item 
+bool \mbox{\hyperlink{class_linked_list_a03ff22f881325da2d37f640ab2380bf2}{is\+Empty}} ()
+\item 
+bool \mbox{\hyperlink{class_linked_list_ad787a90e4dcd431cef9da0dfd8afba6c}{push\+\_\+back}} (string element)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_linked_list_ae2d2a1908eb4705d52ea22eb78d1b5e1}\label{class_linked_list_ae2d2a1908eb4705d52ea22eb78d1b5e1}} 
+\index{LinkedList@{LinkedList}!first@{first}}
+\index{first@{first}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily Linked\+List\+::\+Node $\ast$ Linked\+List\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+zwraca wskaźnik na pierwszy element
+
+\begin{DoxyReturn}{Returns}
+wskaźnik 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_a92bb5271734b51ab089d75bf52aee919}\label{class_linked_list_a92bb5271734b51ab089d75bf52aee919}} 
+\index{LinkedList@{LinkedList}!getLength@{getLength}}
+\index{getLength@{getLength}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily int Linked\+List\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+zwraca długość \mbox{\hyperlink{class_linked_list}{Linked\+List}}
+
+\begin{DoxyReturn}{Returns}
+int długośc listy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_ad4ac8cdacb340a160ef932cb26b89d33}\label{class_linked_list_ad4ac8cdacb340a160ef932cb26b89d33}} 
+\index{LinkedList@{LinkedList}!insert@{insert}}
+\index{insert@{insert}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily bool Linked\+List\+::insert (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{string}]{a }\end{DoxyParamCaption})}
+
+wstawia wartośc do Linkedlist
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & index -\/ index wstawiania \\
+\hline
+{\em string} & a -\/ string ze wstawianą wartością\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true przy powodzeniu, false przy błędzie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_a03ff22f881325da2d37f640ab2380bf2}\label{class_linked_list_a03ff22f881325da2d37f640ab2380bf2}} 
+\index{LinkedList@{LinkedList}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Linked\+List\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+sprawdza czy \mbox{\hyperlink{class_linked_list}{Linked\+List}} jest pusta
+
+\begin{DoxyReturn}{Returns}
+true przy powodzeniu, false przy błędzie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_a555d5682d4e93673cbbeb84f0f177959}\label{class_linked_list_a555d5682d4e93673cbbeb84f0f177959}} 
+\index{LinkedList@{LinkedList}!last@{last}}
+\index{last@{last}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{last()}{last()}}
+{\footnotesize\ttfamily Linked\+List\+::\+Node $\ast$ Linked\+List\+::last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+zwraca wskaźnik na ostatni element
+
+\begin{DoxyReturn}{Returns}
+wskaźnik 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_ad787a90e4dcd431cef9da0dfd8afba6c}\label{class_linked_list_ad787a90e4dcd431cef9da0dfd8afba6c}} 
+\index{LinkedList@{LinkedList}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily bool Linked\+List\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{string}]{element }\end{DoxyParamCaption})}
+
+wstawia element na koniec \mbox{\hyperlink{class_linked_list}{Linked\+List}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & element -\/ wstawiana wartość\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true przy powodzeniu, false przy błędzie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_ad10e4e820ff3f630585b31bf3a25443f}\label{class_linked_list_ad10e4e820ff3f630585b31bf3a25443f}} 
+\index{LinkedList@{LinkedList}!remove@{remove}}
+\index{remove@{remove}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily bool Linked\+List\+::remove (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+usuwa wartośc z Linkedlist
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & index -\/ index usuwanej wartości\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true przy powodzeniu, false przy błędzie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_aa7fe6dc8078957933951a16cd15150bf}\label{class_linked_list_aa7fe6dc8078957933951a16cd15150bf}} 
+\index{LinkedList@{LinkedList}!remove\_value@{remove\_value}}
+\index{remove\_value@{remove\_value}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{remove\_value()}{remove\_value()}}
+{\footnotesize\ttfamily void Linked\+List\+::remove\+\_\+value (\begin{DoxyParamCaption}\item[{string}]{value }\end{DoxyParamCaption})}
+
+usuwa wartość Linkedlist
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & value -\/ usuwana wartość\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true przy powodzeniu, false przy błędzie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_a7a091a6ed84657ffda3c51c8fcceb570}\label{class_linked_list_a7a091a6ed84657ffda3c51c8fcceb570}} 
+\index{LinkedList@{LinkedList}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{retrieve()}{retrieve()}}
+{\footnotesize\ttfamily string Linked\+List\+::retrieve (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+zwraca element z Linkedlist
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & index -\/ index elementu\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_linked_list_a157265cc6ab37fe29d08be8684ca56bb}\label{class_linked_list_a157265cc6ab37fe29d08be8684ca56bb}} 
+\index{LinkedList@{LinkedList}!toString@{toString}}
+\index{toString@{toString}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily void Linked\+List\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+wyświetla \mbox{\hyperlink{class_linked_list}{Linked\+List}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Linked\+List.\+h\item 
+Linked\+List.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\hypertarget{_linked_list_8h_source}{}\doxysection{Linked\+List.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UNTITLED2\_LINKEDLIST\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UNTITLED2\_LINKEDLIST\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stddef.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_linked_list}{LinkedList}}\{}
+\DoxyCodeLine{8 \textcolor{keyword}{private}:}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} size =0;}
+\DoxyCodeLine{10     \textcolor{keyword}{struct }Node\{}
+\DoxyCodeLine{11         \textcolor{keywordtype}{string} value;}
+\DoxyCodeLine{12         Node *next;}
+\DoxyCodeLine{13     \};}
+\DoxyCodeLine{14     Node *header;}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_linked_list}{LinkedList}}();}
+\DoxyCodeLine{17     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_linked_list}{\string~LinkedList}}();}
+\DoxyCodeLine{18     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_linked_list_ad4ac8cdacb340a160ef932cb26b89d33}{insert}}(\textcolor{keywordtype}{int} index, \textcolor{keywordtype}{string} a); \textcolor{comment}{//wstawia do listy, zwraca true lub false}}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_linked_list_a157265cc6ab37fe29d08be8684ca56bb}{toString}}(); \textcolor{comment}{//wyświetla listę}}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_linked_list_a92bb5271734b51ab089d75bf52aee919}{getLength}}(); \textcolor{comment}{//zwraca długość listy}}
+\DoxyCodeLine{21     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_linked_list_a7a091a6ed84657ffda3c51c8fcceb570}{retrieve}}(\textcolor{keywordtype}{int} index); \textcolor{comment}{//zwraca wartość o podanym indexie}}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_linked_list_aa7fe6dc8078957933951a16cd15150bf}{remove\_value}}(\textcolor{keywordtype}{string} value); \textcolor{comment}{//usuwa wartość z listy}}
+\DoxyCodeLine{23     Node *\mbox{\hyperlink{class_linked_list_ae2d2a1908eb4705d52ea22eb78d1b5e1}{first}}(); \textcolor{comment}{//zwraca wskaźnik na pierwszą wartość}}
+\DoxyCodeLine{24     Node *\mbox{\hyperlink{class_linked_list_a555d5682d4e93673cbbeb84f0f177959}{last}}(); \textcolor{comment}{//zwraca wskaźnik na ostatnią wartość}}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_linked_list_ad10e4e820ff3f630585b31bf3a25443f}{remove}} (\textcolor{keywordtype}{int} index); \textcolor{comment}{//usuwa wartość pod indexem}}
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_linked_list_a03ff22f881325da2d37f640ab2380bf2}{isEmpty}}(); \textcolor{comment}{//usuwa wszystkie elementy w liście}}
+\DoxyCodeLine{27     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_linked_list_ad787a90e4dcd431cef9da0dfd8afba6c}{push\_back}}(\textcolor{keywordtype}{string} element); \textcolor{comment}{//wstawia wartość na koniec listy}}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//UNTITLED2\_LINKEDLIST\_H}}
+
+\end{DoxyCode}
